@@ -48,8 +48,6 @@ async def receive_code(message: types.Message):
 async def list_accounts(message: types.Message):
     accounts = get_accounts()
     ready = [a for a in accounts if is_account_ready(a)]
-    await message.answer(f"Active accounts:
-" + "\n".join(ready))
 
 @dp.message_handler(lambda msg: msg.text == "⚙️ Set Groups and Delay")
 async def configure(message: types.Message):
